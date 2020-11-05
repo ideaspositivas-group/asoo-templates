@@ -54,6 +54,7 @@ environment_info:
   rebuild_files:
     - 'Dockerfile'
     - 'requirements.txt'
+    - 'requirements-ipg.txt'
 
 environment_setup:
   entrypoint_chmod:

@@ -1,12 +1,16 @@
-FROM debian:stretch
-LABEL maintainer="Ideas Positivas <www.ideaspositivas.es>"
+FROM debian:stretch-slim
+MAINTAINER Ideas Positivas <www.ideaspositivas.es>
+
+SHELL ["/bin/bash", "-xo", "pipefail", "-c"]
 
 # Generate locale C.UTF-8 for postgres and general locale data
 ENV LANG C.UTF-8
 
+# Use backports to avoid install some libs with pip
+RUN echo 'deb http://deb.debian.org/debian stretch-backports main' > /etc/apt/sources.list.d/backports.list
+
 # Install some deps, lessc and less-plugin-clean-css, and wkhtmltopdf
-RUN set -x; \
-        apt-get update \
+RUN apt-get update \
         && apt-get install -y --no-install-recommends \
             ca-certificates \
             curl \
@@ -15,44 +19,49 @@ RUN set -x; \
             gnupg \
             libssl1.0-dev \
             node-less \
+            python3-num2words \
             python3-pip \
+            python3-phonenumbers \
             python3-pyldap \
             python3-qrcode \
             python3-renderpm \
             python3-setuptools \
+            python3-slugify \
             python3-vobject \
             python3-watchdog \
+            python3-xlrd \
+            python3-xlwt \
             xz-utils \
         && curl -o wkhtmltox.deb -sSL https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb \
         && echo '7e35a63f9db14f93ec7feeb0fce76b30c08f2057 wkhtmltox.deb' | sha1sum -c - \
-        && dpkg --force-depends -i wkhtmltox.deb\
-        && apt-get -y install -f --no-install-recommends \
+        && apt-get install -y --no-install-recommends ./wkhtmltox.deb \
         && rm -rf /var/lib/apt/lists/* wkhtmltox.deb
 
-# Install latest postgresql-client
-RUN set -x; \
-        echo 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main' > etc/apt/sources.list.d/pgdg.list \
-        && export GNUPGHOME="$(mktemp -d)" \
+# install latest postgresql-client
+RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
+        && GNUPGHOME="$(mktemp -d)" \
+        && export GNUPGHOME \
         && repokey='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8' \
         && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}" \
-        && gpg --armor --export "${repokey}" | apt-key add - \
+        && gpg --batch --armor --export "${repokey}" > /etc/apt/trusted.gpg.d/pgdg.gpg.asc \
         && gpgconf --kill all \
         && rm -rf "$GNUPGHOME" \
         && apt-get update  \
-        && apt-get install -y postgresql-client \
+        && apt-get install --no-install-recommends -y postgresql-client \
+        && rm -f /etc/apt/sources.list.d/pgdg.list \
         && rm -rf /var/lib/apt/lists/*
 
 # Install rtlcss (on Debian stretch)
-RUN set -x;\
-    echo "deb http://deb.nodesource.com/node_8.x stretch main" > /etc/apt/sources.list.d/nodesource.list \
-    && export GNUPGHOME="$(mktemp -d)" \
+RUN echo "deb http://deb.nodesource.com/node_8.x stretch main" > /etc/apt/sources.list.d/nodesource.list \
+    && GNUPGHOME="$(mktemp -d)" \
+    && export GNUPGHOME \
     && repokey='9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280' \
     && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}" \
-    && gpg --armor --export "${repokey}" | apt-key add - \
+    && gpg --batch --armor --export "${repokey}" > /etc/apt/trusted.gpg.d/nodejs.gpg.asc \
     && gpgconf --kill all \
     && rm -rf "$GNUPGHOME" \
     && apt-get update \
-    && apt-get install -y nodejs \
+    && apt-get install --no-install-recommends -y nodejs \
     && npm install -g rtlcss \
     && rm -rf /var/lib/apt/lists/*
 
@@ -60,17 +69,28 @@ RUN set -x;\
 ENV ODOO_VERSION 12.0
 ARG ODOO_RELEASE=20200501
 ARG ODOO_SHA=b1fdaa4d0d541f302c90a10a128979af5efe10d1
-RUN set -x; \
-        curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb \
+RUN curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb \
         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c - \
-        && dpkg --force-depends -i odoo.deb \
         && apt-get update \
-        && apt-get -y install -f --no-install-recommends \
+        && apt-get -y install --no-install-recommends ./odoo.deb \
         && rm -rf /var/lib/apt/lists/* odoo.deb
 
 # Install python requirements.txt
 ADD ./requirements.txt /requirements.txt
-RUN pip3 install -r /requirements.txt 
+RUN pip3 install -r /requirements.txt
+
+# For spacy and googlemaps pip libraries
+RUN apt-get update \
+    && apt-get -y install build-essential python3-dev
+RUN pip3 install urllib3==1.24.3 chardet==3.0.4
+RUN pip3 install --upgrade pip setuptools
+
+# Install python requirements-ipg.txt
+ADD ./requirements-ipg.txt /requirements-ipg.txt
+RUN pip3 install -r /requirements-ipg.txt
+
+# Download ES language for spacy
+RUN python3 -m spacy download es_core_news_sm
 
 # Replace Odoo files /usr/lib/python3/dist-packages/odoo
 # -- account_facturx --
@@ -172,15 +192,15 @@ COPY ./odoo/odoo/models.py /usr/lib/python3/dist-packages/odoo/odoo/models.py
 RUN pip3 install num2words xlwt
 COPY ./entrypoint.sh /
 COPY ./config/odoo.conf /etc/odoo/
-RUN chown odoo /etc/odoo/odoo.conf
 
 # Mount /var/lib/odoo to allow restoring filestore and /mnt/extra-addons for users addons
-RUN mkdir -p /mnt/extra-addons \
-        && chown -R odoo /mnt/extra-addons
+RUN chown odoo /etc/odoo/odoo.conf \
+    && mkdir -p /mnt/extra-addons \
+    && chown -R odoo /mnt/extra-addons
 VOLUME ["/var/lib/odoo", "/mnt/extra-addons"]
 
 # Expose Odoo services
-EXPOSE 8069 8072
+EXPOSE 8069 8071 8072
 
 # Set the default config file
 ENV ODOO_RC /etc/odoo/odoo.conf
