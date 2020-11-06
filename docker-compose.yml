@@ -6,7 +6,7 @@ services:
     depends_on:
       - db
     ports:
-      - '8072:8069'
+      - '8069'
       - '8072'
     volumes:
       - 'odoo-data:/var/lib/odoo'
@@ -26,10 +26,10 @@ services:
     ports:
       - '5432'
     environment:
-      - POSTGRES_PASSWORD=123
+      - POSTGRES_PASSWORD=${password('postgres')}
       - POSTGRES_USER=odoo
       - POSTGRES_DB=postgres
-      - PGPASS=123
+      - PGPASS=${password('postgres')}
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - 'postgres-data:/var/lib/postgresql/data/pgdata'
