@@ -83,11 +83,19 @@ RUN pip3 install -r /requirements.txt
 RUN apt-get update \
     && apt-get -y install build-essential python3-dev
 RUN pip3 install urllib3==1.24.3 chardet==3.0.4
-RUN pip3 install --upgrade pip setuptools
+RUN pip3 install --upgrade setuptools
 
 # Install python requirements-ipg.txt
 ADD ./requirements-ipg.txt /requirements-ipg.txt
 RUN pip3 install -r /requirements-ipg.txt
+
+# Add spacy python library
+COPY ./pip/spacy/dist-packages/spacy /usr/local/lib/python3.5/dist-packages/spacy
+COPY ./pip/spacy/bin/spacy /usr/local/bin/
+COPY ./pip/spacy/bin/spacy /usr/local/lib/python3.5/dist-packages/bin/
+RUN chown -R root:staff /usr/local/lib/python3.5/dist-packages/ \
+    && chown root:staff /usr/local/bin/spacy \
+    && chown root:staff /usr/local/lib/python3.5/dist-packages/bin/spacy
 
 # Download ES language for spacy
 RUN python3 -m spacy download es_core_news_sm
