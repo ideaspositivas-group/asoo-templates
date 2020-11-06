@@ -1,7 +1,6 @@
 deploy_info:
   private_submodules:
     - git@github.com:ideaspositivas-group/ilex.git
-    - git@github.com:ideaspositivas-group/ilex-import.git
 
 server_setup:
   update:
