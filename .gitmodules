@@ -58,7 +58,3 @@
 	path = addons/ipg/ilex/ilex
 	url = git@github.com:ideaspositivas-group/ilex.git
 	branch = 12.0
-[submodule "addons/ipg/ilex/ilex-import"]
-	path = addons/ipg/ilex/ilex-import
-	url = git@github.com:ideaspositivas-group/ilex-import.git
-	branch = 12.0
