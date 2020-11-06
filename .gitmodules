@@ -54,11 +54,3 @@
 	path = addons/ipg/muk/muk_web
 	url = https://github.com/ideaspositivas-group/muk_web.git
 	branch = 12.0
-[submodule "addons/ipg/ilex/ilex"]
-	path = addons/ipg/ilex/ilex
-	url = git@github.com:dgomezquilon/ilex.git
-	branch = 12.0
-[submodule "addons/ipg/ilex/ilex-import"]
-	path = addons/ipg/ilex/ilex-import
-	url = git@github.com:dgomezquilon/ilex-import.git
-	branch = 12.0
