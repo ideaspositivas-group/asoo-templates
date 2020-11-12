@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    "name": 'Auth Cloud',
+    "name": 'Authenticator',
     "summary": 'Authentication from cloud Platform',
-    "version": '12.0.1.0',
+    "version": '14.0.1.0',
     "depends": ['base'],
     "category": 'System',
     "description":
