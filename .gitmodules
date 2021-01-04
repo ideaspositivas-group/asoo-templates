@@ -54,3 +54,7 @@
 	path = addons/ipg/ilex/ilex
 	url = git@github.com:ideaspositivas-group/ilex.git
 	branch = 12.0
+[submodule "addons/ipg/OCA/server-ux"]
+	path = addons/ipg/OCA/server-ux
+	url = https://github.com/OCA/server-ux.git
+	branch = 12.0
