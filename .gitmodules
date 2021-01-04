@@ -34,10 +34,6 @@
 	path = addons/ipg/OCA/server-tools
 	url = https://github.com/ideaspositivas-group/server-tools.git
 	branch = 12.0
-[submodule "addons/ipg/OCA/server-ux"]
-	path = addons/ipg/OCA/server-ux
-	url = https://github.com/ideaspositivas-group/server-ux.git
-	branch = 12.0
 [submodule "addons/ipg/OCA/timesheet"]
 	path = addons/ipg/OCA/timesheet
 	url = https://github.com/ideaspositivas-group/timesheet.git
