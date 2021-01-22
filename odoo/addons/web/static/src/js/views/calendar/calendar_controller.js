@@ -302,12 +302,6 @@ var CalendarController = AbstractController.extend({
         var id = event.data._id;
         id = id && parseInt(id).toString() === id ? parseInt(id) : id;
 
-        if (event.data.record.lead_id) {
-            var lead_id = event.data.record.lead_id[0];
-            lead_id = lead_id && parseInt(lead_id).toString() === lead_id ? parseInt(lead_id) : lead_id;
-        }
-
-
         if (!this.eventOpenPopup) {
             this._rpc({
                 model: self.modelName,
@@ -315,25 +309,14 @@ var CalendarController = AbstractController.extend({
                 //The event can be called by a view that can have another context than the default one.
                 args: [[id], event.context || self.context],
             }).then(function (viewId) {
-                if (self.modelName == 'mail.activity'){
                 self.do_action({
-                    type:'ir.actions.act_window',
-                    res_id: lead_id,
-                    res_model: 'crm.lead',
-                    views: [[viewId || false, 'form']],
-                    target: 'current',
-                    context: event.context || self.context,
-                });}
-                else{
-                self.do_action({
-                    type:'ir.actions.act_window',
+                    type: 'ir.actions.act_window',
                     res_id: id,
                     res_model: self.modelName,
                     views: [[viewId || false, 'form']],
                     target: 'current',
                     context: event.context || self.context,
                 });
-                }
             });
             return;
         }
