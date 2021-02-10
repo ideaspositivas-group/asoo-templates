@@ -21,6 +21,7 @@ server_setup:
       - 'curl -fsSL get.docker.com -o get-docker.sh'
       - 'sh get-docker.sh'
       - 'rm get-docker.sh'
+      - 'systemctl enable docker'
   docker-compose:
     sudo: true
     commands:
@@ -49,6 +50,7 @@ environment_info:
   rebuild_files:
     - 'Dockerfile'
     - 'requirements.txt'
+    - 'requirements-ilex.txt'
 
 environment_setup:
   entrypoint_chmod:
