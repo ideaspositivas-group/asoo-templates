@@ -51,3 +51,15 @@
 	path = addons/ilex-old
 	url = git@github.com:ideaspositivas-group/ilex.git
 	branch = 12.0-rewrite
+[submodule "addons/muk/muk_base"]
+	path = addons/muk/muk_base
+	url = https://github.com/ideaspositivas-group/muk_base.git
+	branch = 12.0
+[submodule "addons/muk/muk_dms"]
+	path = addons/muk/muk_dms
+	url = https://github.com/ideaspositivas-group/muk_dms.git
+	branch = 12.0
+[submodule "addons/muk/muk_web"]
+	path = addons/muk/muk_web
+	url = https://github.com/ideaspositivas-group/muk_web.git
+	branch = 12.0
