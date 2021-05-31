@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   web:
-    build: .
+    image: ideaspositivas/odoo:12.0-stable
     depends_on:
       - db
     ports:
@@ -9,9 +9,14 @@ services:
       - '8072'
     volumes:
       - 'odoo-data:/var/lib/odoo'
-      - './config:/etc/odoo'
-      - './addons:/mnt'
-      - './addons/extra-addons:/mnt/extra-addons'
+      - './config:/etc/odoo/base'
+      - './addons:/addons'
+    environment:
+      - PGUSER=odoo
+      - PGPASSWORD=${password('postgres')}
+      - PGHOST=db
+      - PGDATABASE=postgres
+      - ODOO_PRIORITY_ADDONS_PATH=/addons/ilex-odoo,/addons/ilex-old
     networks:
       - default
     tty: true
