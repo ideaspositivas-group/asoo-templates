@@ -52,6 +52,8 @@ environment_info:
     - 'docker-compose.yml'
     - 'config/odoo.conf'
     - 'config/odoo-test.conf'
+  rebuild_files:
+    - 'docker-compose.yml'
 
 environment_test_info:
   test_mute: true
