@@ -1,0 +1,4 @@
+[submodule "addons/ilex-odoo"]
+	path = addons/ilex-odoo
+	url = git@github.com:ideaspositivas-group/ilex-odoo.git
+	branch = 3.0
