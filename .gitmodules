@@ -55,10 +55,6 @@
 	path = addons/muk/muk_web
 	url = https://github.com/ideaspositivas-group/muk_web.git
 	branch = 12.0
-[submodule "addons/ilex-2.1"]
-	path = addons/ilex-2.1
-	url = git@github.com:ideaspositivas-group/ilex.git
-	branch = 2.1-rewrite
 [submodule "addons/ilex-odoo-2.1"]
 	path = addons/ilex-odoo-2.1
 	url = git@github.com:ideaspositivas-group/ilex-odoo.git
