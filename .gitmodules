@@ -59,3 +59,7 @@
 	path = addons/ilex-odoo-2.1
 	url = git@github.com:ideaspositivas-group/ilex-odoo.git
 	branch = 2.1
+[submodule "addons/OCA/social"]
+	path = addons/OCA/social
+	url = https://github.com/OCA/social.git
+	branch = 12.0
