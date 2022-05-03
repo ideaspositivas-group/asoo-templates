@@ -63,3 +63,11 @@
 	path = addons/ilex-odoo-2.2
 	url = git@github.com:ideaspositivas-group/ilex-odoo.git
 	branch = 2.2
+[submodule "addons/odoo/design-themes"]
+	path = addons/odoo/design-themes
+	url = https://github.com/odoo/design-themes.git
+	branch = 12.0
+[submodule "addons/ilex-thirdparty-2.2"]
+	path = addons/ilex-thirdparty-2.2
+	url = git@github.com:ideaspositivas-group/ilex-thirdparty.git
+	branch = 2.2
