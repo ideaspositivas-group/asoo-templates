@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="deployment.server_shell_dialog">
+        <div class="terminal">
+            <t t-if="widget.url">
+                <iframe t-att-src="widget.url" />
+            </t>
+        </div>
+    </t>
+</templates>
