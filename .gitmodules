@@ -126,3 +126,15 @@
 	path = addons/design-themes
 	url = https://github.com/odoo/design-themes.git
 	branch = 15.0
+[submodule "addons/OCA/queue"]
+	path = addons/OCA/queue
+	url = https://github.com/OCA/queue.git
+	branch = 15.0
+[submodule "addons/OCA/partner-contact"]
+	path = addons/OCA/partner-contact
+	url = https://github.com/OCA/partner-contact.git
+	branch = 15.0
+[submodule "addons/OCA/l10n-spain"]
+	path = addons/OCA/l10n-spain
+	url = https://github.com/OCA/l10n-spain.git
+	branch = 15.0
