@@ -138,3 +138,11 @@
 	path = addons/OCA/l10n-spain
 	url = https://github.com/OCA/l10n-spain.git
 	branch = 15.0
+[submodule "addons/OCA/server-ux"]
+	path = addons/OCA/server-ux
+	url = https://github.com/OCA/server-ux.git
+	branch = 15.0
+[submodule "addons/OCA/server-tools"]
+	path = addons/OCA/server-tools
+	url = https://github.com/OCA/server-tools.git
+	branch = 15.0
