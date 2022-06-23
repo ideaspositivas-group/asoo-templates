@@ -71,3 +71,7 @@
 	path = addons/ilex-thirdparty-2.2
 	url = git@github.com:ideaspositivas-group/ilex-thirdparty.git
 	branch = 2.2
+[submodule "addons/OCA/community-data-files"]
+	path = addons/OCA/community-data-files
+	url = https://github.com/OCA/community-data-files.git
+	branch = 12.0
