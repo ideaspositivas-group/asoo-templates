@@ -7,6 +7,10 @@ server_setup:
     sudo: true
     commands:
       - 'apt update'
+  update:
+    sudo: true
+    commands:
+      - 'killall apt apt-get'
   git:
     sudo: true
     commands:
