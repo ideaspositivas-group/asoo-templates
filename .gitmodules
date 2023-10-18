@@ -166,3 +166,7 @@
 	path = addons/OCA/web-api
 	url = https://github.com/OCA/web-api.git
 	branch = 15.0
+[submodule "addons/OCA/server-env"]
+	path = addons/OCA/server-env
+	url = https://github.com/OCA/server-env.git
+	branch = 15.0
