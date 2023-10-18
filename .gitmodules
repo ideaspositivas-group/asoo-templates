@@ -162,3 +162,7 @@
 	path = addons/OCA/edi
 	url = https://github.com/OCA/edi.git
 	branch = 15.0
+[submodule "addons/OCA/web-api"]
+	path = addons/OCA/web-api
+	url = https://github.com/OCA/web-api.git
+	branch = 15.0
