@@ -158,3 +158,7 @@
 	path = addons/OCA/website
 	url = https://github.com/OCA/website.git
 	branch = 15.0
+[submodule "addons/OCA/edi"]
+	path = addons/OCA/edi
+	url = https://github.com/OCA/edi.git
+	branch = 15.0
