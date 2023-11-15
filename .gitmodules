@@ -1,0 +1,172 @@
+[submodule "addons/OCA-17.0/account-analytic"]
+	path = addons/OCA-17.0/account-analytic
+	url = https://github.com/OCA/account-analytic.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/account-closing"]
+	path = addons/OCA-17.0/account-closing
+	url = https://github.com/OCA/account-closing.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/account-financial-reporting"]
+	path = addons/OCA-17.0/account-financial-reporting
+	url = https://github.com/OCA/account-financial-reporting.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/account-financial-tools"]
+	path = addons/OCA-17.0/account-financial-tools
+	url = https://github.com/OCA/account-financial-tools.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/account-invoice-reporting"]
+	path = addons/OCA-17.0/account-invoice-reporting
+	url = https://github.com/OCA/account-invoice-reporting.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/account-invoicing"]
+	path = addons/OCA-17.0/account-invoicing
+	url = https://github.com/OCA/account-invoicing.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/account-payment"]
+	path = addons/OCA-17.0/account-payment
+	url = https://github.com/OCA/account-payment.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/account-reconcile"]
+	path = addons/OCA-17.0/account-reconcile
+	url = https://github.com/OCA/account-reconcile.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/ank-payment"]
+	path = addons/OCA-17.0/ank-payment
+	url = https://github.com/OCA/bank-payment.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/bank-statement-import"]
+	path = addons/OCA-17.0/bank-statement-import
+	url = https://github.com/OCA/bank-statement-import.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/commission"]
+	path = addons/OCA-17.0/commission
+	url = https://github.com/OCA/commission.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/community-data-files"]
+	path = addons/OCA-17.0/community-data-files
+	url = https://github.com/OCA/community-data-files.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/connector"]
+	path = addons/OCA-17.0/connector
+	url = https://github.com/OCA/connector.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/credit-control"]
+	path = addons/OCA-17.0/credit-control
+	url = https://github.com/OCA/credit-control.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/event"]
+	path = addons/OCA-17.0/event
+	url = https://github.com/OCA/event.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/manufacture"]
+	path = addons/OCA-17.0/manufacture
+	url = https://github.com/OCA/manufacture.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/mis-builder"]
+	path = addons/OCA-17.0/mis-builder
+	url = https://github.com/OCA/mis-builder.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/multi-company"]
+	path = addons/OCA-17.0/multi-company
+	url = https://github.com/OCA/multi-company.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/pos"]
+	path = addons/OCA-17.0/pos
+	url = https://github.com/OCA/pos.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/product-attribute"]
+	path = addons/OCA-17.0/product-attribute
+	url = https://github.com/OCA/product-attribute.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/product-variant"]
+	path = addons/OCA-17.0/product-variant
+	url = https://github.com/OCA/product-variant.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/purchase-workflow"]
+	path = addons/OCA-17.0/purchase-workflow
+	url = https://github.com/OCA/purchase-workflow.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/reporting-engine"]
+	path = addons/OCA-17.0/reporting-engine
+	url = https://github.com/OCA/reporting-engine.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/sale-reporting"]
+	path = addons/OCA-17.0/sale-reporting
+	url = https://github.com/OCA/sale-reporting.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/sale-workflow"]
+	path = addons/OCA-17.0/sale-workflow
+	url = https://github.com/OCA/sale-workflow.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/social"]
+	path = addons/OCA-17.0/social
+	url = https://github.com/OCA/social.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/stock-logistics-barcode"]
+	path = addons/OCA-17.0/stock-logistics-barcode
+	url = https://github.com/OCA/stock-logistics-barcode.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/stock-logistics-reporting"]
+	path = addons/OCA-17.0/stock-logistics-reporting
+	url = https://github.com/OCA/stock-logistics-reporting.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/stock-logistics-warehouse"]
+	path = addons/OCA-17.0/stock-logistics-warehouse
+	url = https://github.com/OCA/stock-logistics-warehouse.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/stock-logistics-workflow"]
+	path = addons/OCA-17.0/stock-logistics-workflow
+	url = https://github.com/OCA/stock-logistics-workflow.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/queue"]
+	path = addons/OCA-17.0/queue
+	url = https://github.com/OCA/queue.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/partner-contact"]
+	path = addons/OCA-17.0/partner-contact
+	url = https://github.com/OCA/partner-contact.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/l10n-spain"]
+	path = addons/OCA-17.0/l10n-spain
+	url = https://github.com/OCA/l10n-spain.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/server-ux"]
+	path = addons/OCA-17.0/server-ux
+	url = https://github.com/OCA/server-ux.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/server-tools"]
+	path = addons/OCA-17.0/server-tools
+	url = https://github.com/OCA/server-tools.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/timesheet"]
+	path = addons/OCA-17.0/timesheet
+	url = https://github.com/OCA/timesheet.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/web"]
+	path = addons/OCA-17.0/web
+	url = https://github.com/OCA/web.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/website"]
+	path = addons/OCA-17.0/website
+	url = https://github.com/OCA/website.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/edi"]
+	path = addons/OCA-17.0/edi
+	url = https://github.com/OCA/edi.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/web-api"]
+	path = addons/OCA-17.0/web-api
+	url = https://github.com/OCA/web-api.git
+	branch = 17.0
+[submodule "addons/OCA-17.0/server-env"]
+	path = addons/OCA-17.0/server-env
+	url = https://github.com/OCA/server-env.git
+	branch = 17.0
+[submodule "addons/design-themes-17.0"]
+	path = addons/design-themes-17.0
+	url = https://github.com/odoo/design-themes.git
+	branch = 17.0
+[submodule "addons/ilex-odoo-4.0"]
+	path = addons/ilex-odoo-4.0
+	url = git@github.com:ideaspositivas-group/ilex-odoo.git
+	branch = 4.0
