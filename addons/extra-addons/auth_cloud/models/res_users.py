@@ -18,4 +18,4 @@ class ResUsers(models.Model):
                 ('authenticator_token', '=', password)
             ])
             if not user:
-                raise AccessDenied()
+                raise

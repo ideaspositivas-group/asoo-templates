@@ -17,7 +17,7 @@ services:
       - PGPASSWORD=${password('postgres')}
       - PGHOST=db
       - PGDATABASE=postgres
-      - ODOO_PRIORITY_ADDONS_PATH=/addons/ilex-odoo-3.0
+      - ODOO_PRIORITY_ADDONS_PATH=/addons/ilex-odoo-4.0
     networks:
       - default
     tty: true
