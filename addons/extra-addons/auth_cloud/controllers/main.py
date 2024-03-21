@@ -1,16 +1,14 @@
 # -*- coding: utf-8 -*-
+import werkzeug
 import uuid
 from datetime import datetime, timedelta
 
-from odoo import fields, SUPERUSER_ID, api
-from odoo.addons.web.controllers.main import (
-    set_cookie_and_redirect,
-    login_and_redirect
-)
+from odoo import exceptions, fields, SUPERUSER_ID, api, _
+from odoo.addons.web.controllers.main import ensure_db, set_cookie_and_redirect, login_and_redirect
 from odoo import registry as registry_get
 from odoo.tools import config
 from odoo.exceptions import AccessDenied
-from odoo.http import route, Controller
+from odoo.http import request, route, Controller
 
 TOKENS = {}
 
@@ -33,7 +31,7 @@ class Authenticator(Controller):
             admin_group_id = env.ref('base.group_erp_manager').id
 
             group_ids = []
-            for app, kind, gs, category_name in ResGroups.sudo().get_groups_by_application():
+            for app, kind, gs in ResGroups.sudo().get_groups_by_application():
                 if kind == 'selection':
                     group_ids.extend(gs.ids)
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import fields, models
+from odoo import fields, models, api, _
 from odoo.exceptions import AccessDenied
 
 
@@ -9,9 +9,9 @@ class ResUsers(models.Model):
     authenticator_token = fields.Char('Authenticator token')
     authenticator_expire_in = fields.Datetime('Authenticator token expire in')
 
-    def _check_credentials(self, password, env):
+    def _check_credentials(self, password):
         try:
-            super(ResUsers, self)._check_credentials(password, env)
+            super(ResUsers, self)._check_credentials(password)
         except AccessDenied:
             user = self.sudo().search([
                 ('id', '=', self._uid),
