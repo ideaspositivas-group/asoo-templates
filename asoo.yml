@@ -1,7 +1,3 @@
-deploy_info:
-  private_submodules:
-    - git@github.com:ideaspositivas-group/ilex-odoo.git
-
 server_setup:
   update:
     sudo: true
@@ -38,7 +34,7 @@ server_setup:
 
 environment_info:
   application: 'odoo'
-  application_version: '15.0'
+  application_version: '11.0'
   application_service: 'web'
   application_container_user: '0'
   git_submodule_path: 'addons'

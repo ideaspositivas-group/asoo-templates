@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   web:
-    image: ideaspositivas/odoo:15.0-stable
+    image: ideaspositivas/odoo:11.0-stable
     restart: always
     depends_on:
       - db
@@ -17,7 +17,6 @@ services:
       - PGPASSWORD=${password('postgres')}
       - PGHOST=db
       - PGDATABASE=postgres
-      - ODOO_PRIORITY_ADDONS_PATH=/addons/ilex-odoo-3.0
     networks:
       - default
     tty: true
