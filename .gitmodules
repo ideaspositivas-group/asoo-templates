@@ -166,3 +166,7 @@
 	path = addons/ilex-odoo-4.0
 	url = git@github.com:ideaspositivas-group/ilex-odoo.git
 	branch = 4.0
+[submodule "addons/OCA-17.0/account-fiscal-rule"]
+	path = addons/OCA-17.0/account-fiscal-rule
+	url = https://github.com/OCA/account-fiscal-rule.git
+	branch = 17.0
